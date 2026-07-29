@@ -34,9 +34,9 @@
     "role": "Sustainability",
     "institution": "University of Naples Parthenope",
     "accent": "#237a78",
-    "keywords": ["climate dynamics","extreme events","spatial statistics","remote sensing","climate networks","tipping points","downscaling","uncertainty quantification","attribution","earth observation"],
+    "keywords": ["Water utilities", "Sustainability reporting", "Religion","Ethics","Sociology of worth (SOW)", "Italy","UK","Environmental accounting", "Public value", "Hybridity", "Municipal corporations", "Institutional logic"],
     "papers": [
-      {"title":"Sustainability reporting across religious-ethical traditions: A sociology of Worth perspective on UK and Italian water utilities","year":2026,"file":"paper1.pdf","keywords":["Water utilities", "Sustainability reporting", "Religion","Ethics","Sociology of worth (SOW)", "Italy","UK"],"abstract":""},
+      {"title":"Sustainability reporting across religious-ethical traditions: A sociology of Worth perspective on UK and Italian water utilities","year":2026,"file":"paper1.pdf","keywords":["Water utilities", "Sustainability reporting", "Religion","Ethics","Sociology of worth (SOW)", "Italy","UK","Business Ethics", "Aesthetics", "Value Creation"],"abstract":""},
       {"title":"Oltre l’Etica Aziendale: la Natura Estetica dell'Azienda","year":2025,"file":"paper2.pdf","keywords":["Business Ethics", "Aesthetics", "Value Creation"],"abstract":"Construction of climate interaction networks from heterogeneous satellite products."},
       {"title":"Catholic and Protestant Ethics in the Foundation of CSR: a Theoretical Exploration","year":2025,"file":"paper3.pdf","keywords":["Corporate Social Responsibility (CSR)", "Business Ethics", "Catholic Ethics", "Protestant Ethics", "Capitalism"],"abstract":"Local probabilistic projections for co-occurring climate extremes."},
       {"title":"Making institutional tensions visible: environmental accounting and public value in a municipal corporation","year":2024,"file":"paper5.pdf","keywords":["Environmental accounting", "Public value", "Hybridity", "Municipal corporations", "Institutional logic"],"abstract":"Local roughness and smoothness patterns in high-resolution climate data."}
