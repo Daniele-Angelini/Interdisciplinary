@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Esplora compatibilità scientifiche con Google Scholar snapshots e analisi AI verificata sul web.">
+  <title>Research Compatibility Explorer</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <span class="eyebrow">GOOGLE SCHOLAR + AI</span>
+    <h1>Research Compatibility Explorer</h1>
+    <p>Scegli due ricercatori, importa titoli e autori da Google Scholar e usa l’AI per reperire e analizzare le fonti accessibili dei paper.</p>
+  </div>
+  <div class="source-badge">Metadati Scholar · contenuti verificati sul web</div>
+</header>
+<main>
+  <section class="card setup-card">
+    <div class="step-title"><span>1</span><div><h2>Seleziona due ricercatori</h2><p>Il catalogo è prestabilito. Ogni ricercatore è associato al proprio profilo Scholar e a uno snapshot CSV.</p></div></div>
+    <div class="researcher-grid">
+      <div class="researcher-picker"><label for="selectA">Ricercatore A</label><select id="selectA" class="researcher-select"><option value="">Seleziona</option></select><div id="selectedA" class="selected-researcher empty">Nessun ricercatore selezionato</div></div>
+      <div class="researcher-picker"><label for="selectB">Ricercatore B</label><select id="selectB" class="researcher-select"><option value="">Seleziona</option></select><div id="selectedB" class="selected-researcher empty">Nessun ricercatore selezionato</div></div>
+    </div>
+    <div class="action-row"><button id="loadThemes" class="primary" disabled>Carica pubblicazioni e genera tematiche</button><span id="status">Pronto</span></div>
+  </section>
+
+  <section id="themeSection" class="card hidden">
+    <div class="step-title"><span>2</span><div><h2>Scegli le tematiche</h2><p>Le aree sono estratte da titoli, autori e metadati bibliografici. Selezionane da 1 a 3 per ciascun autore.</p></div></div>
+    <div class="theme-grid"><div><h3 id="themeNameA"></h3><div id="themesA" class="theme-list"></div></div><div><h3 id="themeNameB"></h3><div id="themesB" class="theme-list"></div></div></div>
+    <div class="action-row"><button id="analyze" class="primary" disabled>Calcola indicatori esplorativi</button><span id="selectionStatus"></span></div>
+  </section>
+
+  <section id="dashboard" class="dashboard hidden">
+    <div class="step-title card"><span>3</span><div><h2>Segnali di compatibilità</h2><p>La dashboard presenta indizi quantitativi e base bibliografica, senza costruire progetti di ricerca già pronti.</p></div></div>
+    <div id="metrics" class="metric-strip"></div>
+    <article class="card full-card"><div class="section-head"><div><span class="eyebrow">LESSICO</span><h2>Word cloud</h2></div></div><div id="wordCloud" class="word-cloud"></div></article>
+    <article class="card full-card"><div class="section-head"><div><span class="eyebrow">INTERSEZIONI</span><h2>Compatibilità tematiche</h2></div></div><div id="compatibilityBars" class="bar-chart"></div></article>
+    <article class="card chart-card"><div class="section-head"><div><span class="eyebrow">PROFILO</span><h2>Indicatori medi</h2></div></div><svg id="radarChart" viewBox="0 0 520 360"></svg></article>
+    <article class="card full-card"><div class="section-head"><div><span class="eyebrow">EVIDENZE</span><h2>Dettaglio delle intersezioni</h2></div></div><div id="intersectionCards" class="intersection-grid"></div></article>
+    <article class="card full-card"><div class="section-head"><div><span class="eyebrow">BASE GOOGLE SCHOLAR</span><h2>Titoli e autori importati</h2></div><div class="button-group"><button id="runAi" class="primary">Analizza paper con AI</button><button id="downloadJson" class="secondary">Esporta JSON</button></div></div><p class="notice">L’AI cerca il paper tramite autore, titolo e anno. Può leggere soltanto le fonti effettivamente accessibili: full text, abstract o metadati. Non deve inventare contenuti mancanti.</p><div id="aiStatus" class="ai-status">Analisi AI non ancora eseguita.</div><div id="papersTable" class="table-wrap"></div></article>
+    <article id="aiResultsCard" class="card full-card hidden"><div class="section-head"><div><span class="eyebrow">AI VERIFICATA</span><h2>Contenuti reperiti e segnali interdisciplinari</h2></div></div><div id="aiSummary"></div><div id="aiPaperResults" class="intersection-grid"></div><div id="aiCompatibility" class="intersection-grid"></div></article>
+  </section>
+</main>
+<footer>Frontend GitHub Pages · snapshot Google Scholar · backend serverless OpenAI con ricerca web</footer>
+<script src="./config.js"></script>
+<script src="./researchers.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
