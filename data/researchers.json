@@ -1,0 +1,62 @@
+[
+  {
+    "id": "elena-rossi",
+    "name": "Elena Rossi",
+    "role": "Fractional Processes & Time Series",
+    "institution": "Institute for Stochastic Systems",
+    "accent": "#3156a3",
+    "keywords": ["fractional processes","long memory","roughness","time series","Grünwald–Letnikov","self-similarity","ARFIMA","stochastic volatility","change points","spectral analysis"],
+    "papers": [
+      {"title":"Fractional Filters for Separating Memory and Local Roughness","year":2026,"file":"rossi-01-fractional-filters.pdf","keywords":["fractional filtering","roughness","long memory","GL derivative"],"abstract":"A filtering framework that separates persistent dependence from local path regularity."},
+      {"title":"Weak Identification in Near-Integrated Fractional Models","year":2026,"file":"rossi-02-weak-identification.pdf","keywords":["ARFIMA","weak identification","near unit root","confidence sets"],"abstract":"Identification geometry in ARFIMA models near observationally equivalent boundaries."},
+      {"title":"Local Regularity Maps for Nonstationary Signals","year":2025,"file":"rossi-03-regularity-maps.pdf","keywords":["local Hölder exponent","nonstationarity","change points","multifractional"],"abstract":"Time-varying regularity maps for heterogeneous stochastic signals."},
+      {"title":"Spectral Diagnostics for Long-Memory Systems","year":2024,"file":"rossi-04-spectral-diagnostics.pdf","keywords":["spectral density","long memory","low frequency","diagnostics"],"abstract":"Robust low-frequency diagnostics for persistent systems."},
+      {"title":"Self-Similarity Testing after Fractional Differencing","year":2024,"file":"rossi-05-self-similarity.pdf","keywords":["self-similarity","fractional differencing","Kolmogorov-Smirnov","testing"],"abstract":"Testing self-similarity after controlled removal of dependence."}
+    ]
+  },
+  {
+    "id": "marcus-chen",
+    "name": "Marcus Chen",
+    "role": "Network Science & Graph Learning",
+    "institution": "Center for Complex Networks",
+    "accent": "#8e4f9f",
+    "keywords": ["network science","graph neural networks","dynamic graphs","community detection","causal graphs","network resilience","temporal networks","representation learning","anomaly detection","multilayer networks"],
+    "papers": [
+      {"title":"Graph Neural Operators for Dynamic Networks","year":2026,"file":"chen-01-graph-neural-operators.pdf","keywords":["graph neural networks","dynamic networks","operators","forecasting"],"abstract":"Neural operators for learning evolution laws on time-varying graphs."},
+      {"title":"Multiscale Community Detection in Temporal Graphs","year":2025,"file":"chen-02-temporal-communities.pdf","keywords":["community detection","multiscale","temporal networks","persistence"],"abstract":"Persistent communities across multiple temporal resolutions."},
+      {"title":"Causal Discovery under Network Interference","year":2025,"file":"chen-03-causal-networks.pdf","keywords":["causal discovery","network interference","graphical models","identification"],"abstract":"Causal structure learning when units influence connected neighbours."},
+      {"title":"Resilience Indicators for Multilayer Systems","year":2024,"file":"chen-04-resilience.pdf","keywords":["network resilience","multilayer networks","systemic risk","stress testing"],"abstract":"Indicators of fragility and recovery in interconnected systems."},
+      {"title":"Explainable Anomaly Detection on Graph Streams","year":2024,"file":"chen-05-graph-anomalies.pdf","keywords":["anomaly detection","graph streams","explainability","change points"],"abstract":"Interpretable detection of structural anomalies in streaming graphs."}
+    ]
+  },
+  {
+    "id": "amina-el-sayed",
+    "name": "Amina El-Sayed",
+    "role": "Computational Climate Science",
+    "institution": "Climate Dynamics Laboratory",
+    "accent": "#237a78",
+    "keywords": ["climate dynamics","extreme events","spatial statistics","remote sensing","climate networks","tipping points","downscaling","uncertainty quantification","attribution","earth observation"],
+    "papers": [
+      {"title":"Early-Warning Signals for Regional Climate Tipping","year":2026,"file":"elsayed-01-tipping-signals.pdf","keywords":["tipping points","early warning","critical slowing down","climate"],"abstract":"Regional indicators of critical transitions in climate subsystems."},
+      {"title":"Climate Networks from Multi-Sensor Earth Observation","year":2025,"file":"elsayed-02-climate-networks.pdf","keywords":["climate networks","remote sensing","multisensor","spatial dependence"],"abstract":"Construction of climate interaction networks from heterogeneous satellite products."},
+      {"title":"Probabilistic Downscaling of Compound Extremes","year":2025,"file":"elsayed-03-compound-extremes.pdf","keywords":["downscaling","compound extremes","probabilistic models","uncertainty"],"abstract":"Local probabilistic projections for co-occurring climate extremes."},
+      {"title":"Attribution of Heatwave Persistence","year":2024,"file":"elsayed-04-heatwave-attribution.pdf","keywords":["heatwaves","persistence","attribution","long memory"],"abstract":"Mechanistic attribution of unusually persistent heatwave episodes."},
+      {"title":"Spatial Regularity of High-Resolution Climate Fields","year":2024,"file":"elsayed-05-spatial-regularity.pdf","keywords":["spatial regularity","roughness","climate fields","multiscale"],"abstract":"Local roughness and smoothness patterns in high-resolution climate data."}
+    ]
+  },
+  {
+    "id": "tomas-alvarez",
+    "name": "Tomás Alvarez",
+    "role": "Causal Epidemiology & Population Health",
+    "institution": "School of Population Analytics",
+    "accent": "#b35b35",
+    "keywords": ["causal inference","epidemiology","infectious disease","exposure networks","public health","survival analysis","spatial epidemiology","interference","early warning","health inequalities"],
+    "papers": [
+      {"title":"Causal Effects with Dynamic Exposure Networks","year":2026,"file":"alvarez-01-exposure-networks.pdf","keywords":["causal inference","dynamic networks","interference","exposure"],"abstract":"Causal effect estimation with evolving contact and exposure networks."},
+      {"title":"Early-Warning Indicators for Epidemic Regime Shifts","year":2025,"file":"alvarez-02-epidemic-warning.pdf","keywords":["early warning","epidemics","regime shifts","surveillance"],"abstract":"Statistical warning indicators for abrupt epidemic transitions."},
+      {"title":"Spatial Inequality in Environmental Health Risk","year":2025,"file":"alvarez-03-spatial-inequality.pdf","keywords":["spatial epidemiology","environmental exposure","inequality","risk mapping"],"abstract":"Fine-scale mapping of unequal environmental health burdens."},
+      {"title":"Robust Survival Models under Time-Varying Confounding","year":2024,"file":"alvarez-04-survival-confounding.pdf","keywords":["survival analysis","time-varying confounding","robustness","longitudinal data"],"abstract":"Robust survival estimators for longitudinal observational studies."},
+      {"title":"Multiscale Persistence in Disease Incidence","year":2024,"file":"alvarez-05-disease-persistence.pdf","keywords":["persistence","long memory","disease incidence","multiscale"],"abstract":"Persistent and multiscale dependence patterns in disease incidence."}
+    ]
+  }
+]
