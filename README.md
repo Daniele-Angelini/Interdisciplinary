@@ -1,111 +1,121 @@
-# Research Compatibility Explorer — Google Scholar + AI
+# Research Compatibility Explorer — Google Scholar snapshots + AI
 
-Il progetto usa snapshot CSV esportati da Google Scholar per ottenere **titolo, autori e anno** delle pubblicazioni di ricercatori scelti da un catalogo chiuso. Un backend OpenAI cerca poi online le fonti corrispondenti e analizza soltanto il materiale effettivamente accessibile.
+Il catalogo dei ricercatori è mantenuto in `data/researchers.json`. Per ogni ricercatore, uno script recupera il profilo Google Scholar tramite il suo **Google Scholar Author ID**, crea il CSV con titoli, autori e anni e lo salva in `data/scholar/`. La dashboard GitHub Pages legge questi snapshot; il modulo AI usa poi i metadati per cercare e analizzare le fonti accessibili.
 
-## Principio di funzionamento
+## Punto essenziale
 
-```text
-Google Scholar CSV
-  → autore, titolo, anno
-  → ricerca web AI
-  → identificazione del paper
-  → full text / abstract / metadati
-  → dati strutturati di compatibilità
+GitHub Pages è statico e **non può creare o modificare file nel repository**. La generazione dei CSV avviene quindi in uno di questi due modi:
+
+1. **localmente**, eseguendo lo script Python;
+2. tramite la **GitHub Action** inclusa, che aggiorna e committa i CSV.
+
+L'accesso automatizzato a Google Scholar non è ufficialmente supportato. Lo script usa la libreria non ufficiale `scholarly`; Google può mostrare CAPTCHA o bloccare temporaneamente l'IP. In caso di errore, il CSV esistente non viene sovrascritto.
+
+## 1. Aggiungere un ricercatore
+
+Apri `data/researchers.json` e aggiungi:
+
+```json
+{
+  "id": "nome-cognome",
+  "name": "Nome Cognome",
+  "affiliation": "Università",
+  "description": "Aree scientifiche principali",
+  "scholarAuthorId": "ABC123xyzAAAAJ",
+  "googleScholarUrl": "https://scholar.google.com/citations?user=ABC123xyzAAAAJ",
+  "publicationsFile": "./data/scholar/nome-cognome.csv"
+}
 ```
 
-L'AI non deve dedurre il contenuto dal solo titolo. Per ogni lavoro restituisce uno dei livelli:
+L'Author ID è il valore dopo `user=` nell'URL del profilo Scholar.
 
-- `full_text`: testo completo legittimamente accessibile;
-- `abstract`: è stato reperito almeno l'abstract;
-- `metadata_only`: sono stati verificati soltanto i metadati;
-- `not_found`: il lavoro non è stato identificato con sufficiente sicurezza.
+## 2. Creare il CSV localmente
 
-## Output AI
+```bash
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
+pip install -r requirements-scholar.txt
+python scripts/generate_researchers_js.py
+python scripts/update_google_scholar.py --researcher nome-cognome
+```
 
-La dashboard mostra esclusivamente dati strutturati:
+Per aggiornare tutti i ricercatori configurati:
 
-- keyword del paper;
-- metodi;
-- oggetti di studio;
-- risultati verificabili;
-- fonti consultate;
-- incertezze;
-- keyword trasversali;
-- segnali di compatibilità fra le tematiche scelte;
-- punteggi di evidenza, novità e distanza metodologica;
-- domande aperte, non progetti già confezionati.
+```bash
+python scripts/update_google_scholar.py
+```
+
+Il CSV generato contiene:
+
+```csv
+Title,Authors,Year,Publication,Citations,ScholarURL
+```
+
+## 3. Aggiornamento da GitHub
+
+La workflow è in `.github/workflows/update-scholar.yml` e parte:
+
+- quando cambia `data/researchers.json`;
+- manualmente da **Actions → Update Google Scholar snapshots → Run workflow**;
+- il primo giorno di ogni mese.
+
+Per aggiornare una sola persona, inserisci il relativo `researcher_id`. La Action genera `researchers.js`, aggiorna i CSV e committa le modifiche.
+
+### Permessi del repository
+
+In GitHub apri:
+
+```text
+Settings → Actions → General → Workflow permissions
+```
+
+seleziona:
+
+```text
+Read and write permissions
+```
+
+altrimenti la Action non può effettuare il commit.
+
+## 4. Se Google blocca la GitHub Action
+
+Gli IP condivisi dei runner GitHub possono essere sottoposti a CAPTCHA. In questo caso esegui lo script localmente e fai commit del CSV:
+
+```bash
+git add data/researchers.json researchers.js data/scholar/nome-cognome.csv
+git commit -m "Update Scholar profile"
+git push
+```
+
+Questa modalità usa il tuo normale accesso di rete ed è spesso più affidabile, ma non elimina la possibilità di blocchi Scholar.
+
+## 5. Modulo AI
+
+La dashboard invia al backend OpenAI principalmente:
+
+- titolo;
+- autori;
+- anno;
+- URL Scholar disponibile;
+- temi selezionati.
+
+L'AI deve distinguere fra testo completo, abstract, soli metadati e paper non identificato. Non deve sostenere di aver letto un articolo quando ha reperito soltanto il titolo.
 
 ## Struttura
 
 ```text
-research-compatibility-ai/
-├── index.html
-├── styles.css
-├── app.js
-├── config.js
-├── researchers.js
-├── data/scholar/*.csv
+research-compatibility-ai-scholar-sync/
+├── .github/workflows/update-scholar.yml
 ├── api/analyze.js
-├── package.json
-└── vercel.json
+├── data/
+│   ├── researchers.json
+│   └── scholar/*.csv
+├── scripts/
+│   ├── generate_researchers_js.py
+│   └── update_google_scholar.py
+├── researchers.js
+├── requirements-scholar.txt
+├── index.html
+├── app.js
+└── styles.css
 ```
-
-## Configurazione
-
-### 1. Frontend GitHub Pages
-
-Pubblicare i file statici su GitHub Pages.
-
-Se il backend è ospitato in un progetto Vercel separato, modificare `config.js`:
-
-```javascript
-window.APP_CONFIG = {
-  AI_API_BASE: "https://nome-backend.vercel.app"
-};
-```
-
-Se frontend e backend vengono pubblicati insieme su Vercel, lasciare la stringa vuota.
-
-### 2. Backend Vercel
-
-Configurare queste variabili d'ambiente:
-
-```text
-OPENAI_API_KEY=...
-OPENAI_MODEL=gpt-5-mini
-ALLOWED_ORIGIN=https://TUO-USERNAME.github.io
-```
-
-La chiave OpenAI deve restare sul server e non deve mai essere inserita in `config.js`, `app.js` o nel repository pubblico.
-
-### 3. Google Scholar
-
-Per ogni ricercatore:
-
-1. aprire il profilo Google Scholar;
-2. esportare le pubblicazioni in CSV;
-3. salvare il file in `data/scholar/`;
-4. aggiornare `researchers.js`.
-
-I campi minimi sono:
-
-```csv
-Title,Authors,Year
-```
-
-## Limiti reali
-
-Autore, titolo e anno sono sufficienti per cercare e identificare molti paper, ma non garantiscono l'accesso al testo completo. Il risultato dipende dalla disponibilità di:
-
-- pagine dell'editore;
-- abstract indicizzati;
-- DOI;
-- preprint;
-- repository istituzionali;
-- versioni open access.
-
-Un paper dietro paywall può essere identificato correttamente senza poter essere letto integralmente. La dashboard espone esplicitamente questo limite.
-
-## Costi
-
-Google Scholar e GitHub Pages restano gratuiti. L'uso dell'API OpenAI non è incluso automaticamente nell'abbonamento ChatGPT e comporta costi API in base al modello, ai token e alle chiamate di ricerca web utilizzate.
