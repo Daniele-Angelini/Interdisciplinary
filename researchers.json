@@ -1,38 +1,38 @@
 [
   {
-    "id": "elena-rossi",
-    "name": "Elena Rossi",
-    "affiliation": "Università dimostrativa",
-    "description": "Processi frazionari, memoria lunga e serie storiche.",
+    "id": "daniele-angelini",
+    "name": "Daniele Angelini",
+    "affiliation": "Sapienza, University of Rome",
+    "description": "Fractional Processes & Stochastic Calculus",
     "scholarAuthorId": "",
-    "googleScholarUrl": "https://scholar.google.com/",
-    "publicationsFile": "./data/scholar/elena-rossi.csv"
+    "googleScholarUrl": "https://scholar.google.com/citations?user=wH5FfH0AAAAJ&hl=it",
+    "publicationsFile": "./data/scholar/daniele-angelini.csv"
   },
   {
-    "id": "marcus-chen",
-    "name": "Marcus Chen",
-    "affiliation": "Institute for Network Science",
-    "description": "Reti temporali, causalità e apprendimento su grafi.",
+    "id": "ivan-colagè",
+    "name": "Ivan Colagè",
+    "affiliation": "Pontifical University of the Holy Cross",
+    "description": "Human Evolution & Cultural Transmission",
     "scholarAuthorId": "",
-    "googleScholarUrl": "https://scholar.google.com/",
-    "publicationsFile": "./data/scholar/marcus-chen.csv"
+    "googleScholarUrl": "https://scholar.google.com/citations?user=GcFlkycAAAAJ&hl=it&oi=ao",
+    "publicationsFile": "./data/scholar/ivan-colagè.csv"
   },
   {
-    "id": "amina-el-sayed",
-    "name": "Amina El-Sayed",
-    "affiliation": "Centre for Climate Dynamics",
-    "description": "Clima computazionale, estremi e previsione regionale.",
+    "id": "stefano-oliva",
+    "name": "Stefano Oliva",
+    "affiliation": "Università Telematica Unicusano",
+    "description": "Filosofia del Linguaggio & Estetica",
     "scholarAuthorId": "",
-    "googleScholarUrl": "https://scholar.google.com/",
-    "publicationsFile": "./data/scholar/amina-el-sayed.csv"
+    "googleScholarUrl": "https://scholar.google.com/citations?hl=it&user=65F2uicAAAAJ",
+    "publicationsFile": "./data/scholar/stefano-oliva.csv"
   },
   {
-    "id": "tomas-alvarez",
-    "name": "Tomás Alvarez",
-    "affiliation": "School of Population Health",
-    "description": "Epidemiologia causale, diffusione e rischio sanitario.",
+    "id": "claudio-tagliapietra",
+    "name": "Claudio Tagliapietra",
+    "affiliation": "Pontifical University of the Holy Cross",
+    "description": "Fundamental Theology & Theology and Science",
     "scholarAuthorId": "",
-    "googleScholarUrl": "https://scholar.google.com/",
-    "publicationsFile": "./data/scholar/tomas-alvarez.csv"
+    "googleScholarUrl": "https://scholar.google.com/citations?hl=it&user=pRI8YwkAAAAJ",
+    "publicationsFile": "./data/scholar/claudio-tagliapietra.csv"
   }
 ]
