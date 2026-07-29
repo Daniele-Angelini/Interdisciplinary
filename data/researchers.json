@@ -1,13 +1,13 @@
 [
   {
-    "id": "elena-rossi",
-    "name": "Elena Rossi",
-    "role": "Fractional Processes & Time Series",
-    "institution": "Institute for Stochastic Systems",
+    "id": "ivan-colagè",
+    "name": "Ivan Colagè",
+    "role": "Evolution and Cultural Transmission",
+    "institution": "Pontificia Università della Santa Croce",
     "accent": "#3156a3",
     "keywords": ["fractional processes","long memory","roughness","time series","Grünwald–Letnikov","self-similarity","ARFIMA","stochastic volatility","change points","spectral analysis"],
     "papers": [
-      {"title":"Fractional Filters for Separating Memory and Local Roughness","year":2026,"file":"rossi-01-fractional-filters.pdf","keywords":["fractional filtering","roughness","long memory","GL derivative"],"abstract":"A filtering framework that separates persistent dependence from local path regularity."},
+      {"title":"From number sense to number symbols. An archaeological perspective","year":2026,"file":"rossi-01-fractional-filters.pdf","keywords":["fractional filtering","roughness","long memory","GL derivative"],"abstract":"A filtering framework that separates persistent dependence from local path regularity."},
       {"title":"Weak Identification in Near-Integrated Fractional Models","year":2026,"file":"rossi-02-weak-identification.pdf","keywords":["ARFIMA","weak identification","near unit root","confidence sets"],"abstract":"Identification geometry in ARFIMA models near observationally equivalent boundaries."},
       {"title":"Local Regularity Maps for Nonstationary Signals","year":2025,"file":"rossi-03-regularity-maps.pdf","keywords":["local Hölder exponent","nonstationarity","change points","multifractional"],"abstract":"Time-varying regularity maps for heterogeneous stochastic signals."},
       {"title":"Spectral Diagnostics for Long-Memory Systems","year":2024,"file":"rossi-04-spectral-diagnostics.pdf","keywords":["spectral density","long memory","low frequency","diagnostics"],"abstract":"Robust low-frequency diagnostics for persistent systems."},
@@ -15,10 +15,10 @@
     ]
   },
   {
-    "id": "marcus-chen",
-    "name": "Marcus Chen",
-    "role": "Network Science & Graph Learning",
-    "institution": "Center for Complex Networks",
+    "id": "daniele-angelini",
+    "name": "Daniele Angelini",
+    "role": "Fractional Processes and Statistical Finance",
+    "institution": "Sapienza, University of Rome",
     "accent": "#8e4f9f",
     "keywords": ["network science","graph neural networks","dynamic graphs","community detection","causal graphs","network resilience","temporal networks","representation learning","anomaly detection","multilayer networks"],
     "papers": [
@@ -30,10 +30,10 @@
     ]
   },
   {
-    "id": "amina-el-sayed",
-    "name": "Amina El-Sayed",
-    "role": "Computational Climate Science",
-    "institution": "Climate Dynamics Laboratory",
+    "id": "antonio-dalessio",
+    "name": "Antonio D'Alessio",
+    "role": "Sustainability",
+    "institution": "University of Naples Parthenope",
     "accent": "#237a78",
     "keywords": ["climate dynamics","extreme events","spatial statistics","remote sensing","climate networks","tipping points","downscaling","uncertainty quantification","attribution","earth observation"],
     "papers": [
@@ -42,21 +42,6 @@
       {"title":"Probabilistic Downscaling of Compound Extremes","year":2025,"file":"elsayed-03-compound-extremes.pdf","keywords":["downscaling","compound extremes","probabilistic models","uncertainty"],"abstract":"Local probabilistic projections for co-occurring climate extremes."},
       {"title":"Attribution of Heatwave Persistence","year":2024,"file":"elsayed-04-heatwave-attribution.pdf","keywords":["heatwaves","persistence","attribution","long memory"],"abstract":"Mechanistic attribution of unusually persistent heatwave episodes."},
       {"title":"Spatial Regularity of High-Resolution Climate Fields","year":2024,"file":"elsayed-05-spatial-regularity.pdf","keywords":["spatial regularity","roughness","climate fields","multiscale"],"abstract":"Local roughness and smoothness patterns in high-resolution climate data."}
-    ]
-  },
-  {
-    "id": "tomas-alvarez",
-    "name": "Tomás Alvarez",
-    "role": "Causal Epidemiology & Population Health",
-    "institution": "School of Population Analytics",
-    "accent": "#b35b35",
-    "keywords": ["causal inference","epidemiology","infectious disease","exposure networks","public health","survival analysis","spatial epidemiology","interference","early warning","health inequalities"],
-    "papers": [
-      {"title":"Causal Effects with Dynamic Exposure Networks","year":2026,"file":"alvarez-01-exposure-networks.pdf","keywords":["causal inference","dynamic networks","interference","exposure"],"abstract":"Causal effect estimation with evolving contact and exposure networks."},
-      {"title":"Early-Warning Indicators for Epidemic Regime Shifts","year":2025,"file":"alvarez-02-epidemic-warning.pdf","keywords":["early warning","epidemics","regime shifts","surveillance"],"abstract":"Statistical warning indicators for abrupt epidemic transitions."},
-      {"title":"Spatial Inequality in Environmental Health Risk","year":2025,"file":"alvarez-03-spatial-inequality.pdf","keywords":["spatial epidemiology","environmental exposure","inequality","risk mapping"],"abstract":"Fine-scale mapping of unequal environmental health burdens."},
-      {"title":"Robust Survival Models under Time-Varying Confounding","year":2024,"file":"alvarez-04-survival-confounding.pdf","keywords":["survival analysis","time-varying confounding","robustness","longitudinal data"],"abstract":"Robust survival estimators for longitudinal observational studies."},
-      {"title":"Multiscale Persistence in Disease Incidence","year":2024,"file":"alvarez-05-disease-persistence.pdf","keywords":["persistence","long memory","disease incidence","multiscale"],"abstract":"Persistent and multiscale dependence patterns in disease incidence."}
     ]
   }
 ]
