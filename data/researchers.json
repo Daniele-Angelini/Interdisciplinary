@@ -1,38 +1,38 @@
 [
   {
-    id: "daniele-angelini",
-    name: "Daniele Angelini",
-    affiliation: "Sapienza, University of Rome",
-    description: "Fractional Processes & Stochastic Calculus",
-    scholarAuthorId: "",
-    googleScholarUrl: "https://scholar.google.com/citations?user=wH5FfH0AAAAJ&hl=it",
-    publicationsFile: "./data/scholar/daniele-angelini.csv"
+    "id": "daniele-angelini",
+    "name": "Daniele Angelini",
+    "affiliation": "Sapienza, University of Rome",
+    "description": "Fractional Processes & Stochastic Calculus",
+    "scholarAuthorId": "",
+    "googleScholarUrl": "https://scholar.google.com/citations?user=wH5FfH0AAAAJ&hl=it",
+    "publicationsFile": "./data/scholar/daniele-angelini.csv"
   },
   {
-    id: "ivan-colagè",
-    name: "Ivan Colagè",
-    affiliation: "Pontifical University of the Holy Cross",
-    description: "Human Evolution & Cultural Transmission",
-    scholarAuthorId: "",
-    googleScholarUrl: "https://scholar.google.com/citations?user=GcFlkycAAAAJ&hl=it&oi=ao",
-    publicationsFile: "./data/scholar/ivan-colagè.csv"
+    "id": "ivan-colagè",
+    "name": "Ivan Colagè",
+    "affiliation": "Pontifical University of the Holy Cross",
+    "description": "Human Evolution & Cultural Transmission",
+    "scholarAuthorId": "",
+    "googleScholarUrl": "https://scholar.google.com/citations?user=GcFlkycAAAAJ&hl=it&oi=ao",
+    "publicationsFile": "./data/scholar/ivan-colagè.csv"
   },
   {
-    id: "stefano-oliva",
-    name: "Stefano Oliva",
-    affiliation: "Università Telematica Unicusano",
-    description: "Filosofia del Linguaggio & Estetica",
-    scholarAuthorId: "",
-    googleScholarUrl: "https://scholar.google.com/citations?hl=it&user=65F2uicAAAAJ",
-    publicationsFile: "./data/scholar/stefano-oliva.csv"
+    "id": "stefano-oliva",
+    "name": "Stefano Oliva",
+    "affiliation": "Università Telematica Unicusano",
+    "description": "Filosofia del Linguaggio & Estetica",
+    "scholarAuthorId": "",
+    "googleScholarUrl": "https://scholar.google.com/citations?hl=it&user=65F2uicAAAAJ",
+    "publicationsFile": "./data/scholar/stefano-oliva.csv"
   },
   {
-    id: "claudio-tagliapietra",
-    name: "Claudio Tagliapietra",
-    affiliation: "Pontifical University of the Holy Cross",
-    description: "Fundamental Theology & Theology and Science",
-    scholarAuthorId: "",
-    googleScholarUrl: "https://scholar.google.com/citations?hl=it&user=pRI8YwkAAAAJ",
-    publicationsFile: "./data/scholar/claudio-tagliapietra.csv"
+    "id": "claudio-tagliapietra",
+    "name": "Claudio Tagliapietra",
+    "affiliation": "Pontifical University of the Holy Cross",
+    "description": "Fundamental Theology & Theology and Science",
+    "scholarAuthorId": "",
+    "googleScholarUrl": "https://scholar.google.com/citations?hl=it&user=pRI8YwkAAAAJ",
+    "publicationsFile": "./data/scholar/claudio-tagliapietra.csv"
   }
 ]
