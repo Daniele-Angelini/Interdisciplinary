@@ -26,6 +26,18 @@
     <div class="action-row"><button id="loadThemes" class="primary" disabled>Carica pubblicazioni e genera tematiche</button><span id="status">Pronto</span></div>
   </section>
 
+
+  <section class="card admin-card">
+    <div class="step-title"><span>↻</span><div><h2>Aggiorna Google Scholar</h2><p>Area amministrativa: avvia lo script Python su GitHub Actions e crea o rigenera il CSV del ricercatore.</p></div></div>
+    <div class="admin-sync-grid">
+      <div><label for="syncResearcher">Ricercatore da sincronizzare</label><select id="syncResearcher" class="researcher-select"><option value="">Seleziona</option></select></div>
+      <div><label for="syncKey">Chiave amministratore</label><input id="syncKey" class="text-input" type="password" autocomplete="current-password" placeholder="ADMIN_SYNC_KEY"></div>
+      <div class="sync-button-wrap"><button id="syncScholar" class="secondary">Crea / aggiorna CSV</button></div>
+    </div>
+    <div id="syncStatus" class="ai-status">Nessuna sincronizzazione avviata.</div>
+    <p class="notice">Il pulsante non esegue Python nel browser: ordina a GitHub Actions di eseguire <code>scripts/update_google_scholar.py</code>, salvare il CSV e aggiornare GitHub Pages.</p>
+  </section>
+
   <section id="themeSection" class="card hidden">
     <div class="step-title"><span>2</span><div><h2>Scegli le tematiche</h2><p>Le aree sono estratte da titoli, autori e metadati bibliografici. Selezionane da 1 a 3 per ciascun autore.</p></div></div>
     <div class="theme-grid"><div><h3 id="themeNameA"></h3><div id="themesA" class="theme-list"></div></div><div><h3 id="themeNameB"></h3><div id="themesB" class="theme-list"></div></div></div>

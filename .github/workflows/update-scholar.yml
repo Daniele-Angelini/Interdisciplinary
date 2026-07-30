@@ -1,0 +1,65 @@
+name: Update Google Scholar snapshots
+
+on:
+  workflow_dispatch:
+    inputs:
+      researcher_id:
+        description: "Catalog id to update; leave empty for all"
+        required: false
+        type: string
+      max_publications:
+        description: "0 = all publications"
+        required: false
+        default: "0"
+        type: string
+  push:
+    paths:
+      - "data/researchers.json"
+      - "scripts/update_google_scholar.py"
+      - "scripts/generate_researchers_js.py"
+  schedule:
+    - cron: "17 4 1 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements-scholar.txt
+
+      - name: Generate browser catalog
+        run: python scripts/generate_researchers_js.py
+
+      - name: Update Scholar CSV snapshots
+        env:
+          RESEARCHER_ID: ${{ inputs.researcher_id }}
+          MAX_PUBLICATIONS: ${{ inputs.max_publications || '0' }}
+        run: |
+          args=(--max-publications "$MAX_PUBLICATIONS")
+          if [ -n "$RESEARCHER_ID" ]; then
+            args+=(--researcher "$RESEARCHER_ID")
+          fi
+          python scripts/update_google_scholar.py "${args[@]}"
+
+      - name: Commit changed snapshots
+        run: |
+          if git diff --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/researchers.json researchers.js data/scholar/*.csv
+          git commit -m "Update Google Scholar snapshots"
+          git push

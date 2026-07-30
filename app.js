@@ -4,7 +4,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 const stop=new Set('the and of in for to a an on with using based from study analysis approach model models method methods applications application new via under between toward towards effects effect data results evidence research paper review journal volume issue'.split(' '));
 const catalog=Array.isArray(window.RESEARCHER_CATALOG)?window.RESEARCHER_CATALOG:[];
 function setStatus(t){$('status').textContent=t}
-function populate(){const o=catalog.map(r=>`<option value="${esc(r.id)}">${esc(r.name)} — ${esc(r.affiliation||'')}</option>`).join('');$('selectA').insertAdjacentHTML('beforeend',o);$('selectB').insertAdjacentHTML('beforeend',o)}
+function populate(){const o=catalog.map(r=>`<option value="${esc(r.id)}">${esc(r.name)} — ${esc(r.affiliation||'')}</option>`).join('');$('selectA').insertAdjacentHTML('beforeend',o);$('selectB').insertAdjacentHTML('beforeend',o);$('syncResearcher').insertAdjacentHTML('beforeend',o)}
 function selectResearcher(side,id){const r=catalog.find(x=>x.id===id)||null;state[side]=r;const box=$(`selected${side}`);if(!r){box.className='selected-researcher empty';box.textContent='Nessun ricercatore selezionato'}else{box.className='selected-researcher';box.innerHTML=`<strong>${esc(r.name)}</strong><div class="meta">${esc(r.affiliation||'')}</div><div class="profile-description">${esc(r.description||'')}</div><div class="profile-links"><a target="_blank" rel="noopener" href="${esc(r.googleScholarUrl)}">Apri Google Scholar</a></div>`}const dup=state.A&&state.B&&state.A.id===state.B.id;$('loadThemes').disabled=!(state.A&&state.B)||dup;setStatus(dup?'Seleziona due ricercatori diversi':'Pronto');$('themeSection').classList.add('hidden');$('dashboard').classList.add('hidden')}
 $('selectA').onchange=e=>selectResearcher('A',e.target.value);$('selectB').onchange=e=>selectResearcher('B',e.target.value);populate();
 
@@ -57,4 +57,22 @@ $('runAi').onclick=async()=>{
     renderAI(data);status.className='ai-status success';status.textContent='Analisi completata. I livelli di accesso indicano cosa è stato realmente reperito.';
   }catch(e){status.className='ai-status error';status.textContent=`Errore: ${e.message}`}
   finally{$('runAi').disabled=false}
+};
+
+
+const syncApiBase=(window.APP_CONFIG?.SYNC_API_BASE||window.APP_CONFIG?.AI_API_BASE||'').replace(/\/$/,'');
+$('syncScholar').onclick=async()=>{
+  const researcherId=$('syncResearcher').value;
+  const adminKey=$('syncKey').value.trim();
+  const status=$('syncStatus');
+  if(!researcherId){status.className='ai-status error';status.textContent='Seleziona un ricercatore.';return}
+  if(!adminKey){status.className='ai-status error';status.textContent='Inserisci la chiave amministratore.';return}
+  $('syncScholar').disabled=true;status.className='ai-status loading';status.textContent='Avvio del workflow GitHub Actions…';
+  try{
+    const r=await fetch(`${syncApiBase}/api/sync-scholar`,{method:'POST',headers:{'Content-Type':'application/json','X-Admin-Key':adminKey},body:JSON.stringify({researcherId})});
+    const data=await r.json();if(!r.ok)throw new Error(data.detail||data.error||`HTTP ${r.status}`);
+    status.className='ai-status success';
+    status.innerHTML=`Sincronizzazione avviata per <strong>${esc(data.researcherId)}</strong>. Il CSV sarà disponibile dopo il completamento e il deploy.${data.actionsUrl?` <a target="_blank" rel="noopener" href="${esc(data.actionsUrl)}">Apri Actions</a>`:''}`;
+  }catch(e){status.className='ai-status error';status.textContent=`Errore sincronizzazione: ${e.message}`}
+  finally{$('syncScholar').disabled=false}
 };
