@@ -5,7 +5,7 @@ window.RESEARCHER_CATALOG = [
     "name": "Daniele Angelini",
     "affiliation": "Sapienza, University of Rome",
     "description": "Fractional Processes & Stochastic Calculus",
-    "scholarAuthorId": "",
+    "scholarAuthorId": "wH5FfH0AAAAJ",
     "googleScholarUrl": "https://scholar.google.com/citations?user=wH5FfH0AAAAJ&hl=it",
     "publicationsFile": "./data/scholar/daniele-angelini.csv"
   },
@@ -14,7 +14,7 @@ window.RESEARCHER_CATALOG = [
     "name": "Ivan Colagè",
     "affiliation": "Pontifical University of the Holy Cross",
     "description": "Human Evolution & Cultural Transmission",
-    "scholarAuthorId": "",
+    "scholarAuthorId": "GcFlkycAAAAJ",
     "googleScholarUrl": "https://scholar.google.com/citations?user=GcFlkycAAAAJ&hl=it&oi=ao",
     "publicationsFile": "./data/scholar/ivan-colagè.csv"
   },
@@ -23,7 +23,7 @@ window.RESEARCHER_CATALOG = [
     "name": "Stefano Oliva",
     "affiliation": "Università Telematica Unicusano",
     "description": "Filosofia del Linguaggio & Estetica",
-    "scholarAuthorId": "",
+    "scholarAuthorId": "65F2uicAAAAJ",
     "googleScholarUrl": "https://scholar.google.com/citations?hl=it&user=65F2uicAAAAJ",
     "publicationsFile": "./data/scholar/stefano-oliva.csv"
   },
@@ -32,7 +32,7 @@ window.RESEARCHER_CATALOG = [
     "name": "Claudio Tagliapietra",
     "affiliation": "Pontifical University of the Holy Cross",
     "description": "Fundamental Theology & Theology and Science",
-    "scholarAuthorId": "",
+    "scholarAuthorId": "pRI8YwkAAAAJ",
     "googleScholarUrl": "https://scholar.google.com/citations?hl=it&user=pRI8YwkAAAAJ",
     "publicationsFile": "./data/scholar/claudio-tagliapietra.csv"
   }
